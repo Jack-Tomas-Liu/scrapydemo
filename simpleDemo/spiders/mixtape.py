@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # 拉私家课列表，然后下载音频。
-# 第一期可以做非登录情况下，拉部分数据。
+#
 import os
 import subprocess
 
@@ -23,8 +23,8 @@ file_dir_path = os.path
 
 class MixtapeSpider(scrapy.Spider):
     name = 'mixtape'
-    allowed_domains = ['api.zhihu.com', 'baidu.com']
-    start_urls = [api, 'https://www.baidu.com']
+    allowed_domains = ['api.zhihu.com']
+    start_urls = [api]
 
     limit = '10'
     offset = 0
@@ -99,6 +99,3 @@ if __name__ == '__main__':
 
     execute('scrapy crawl mixtape'.split())  # ['scrapy crawl','mixtape']
 
-    # 'scrapy crawl amazon_products -o items.csv -t csv'.split()
-
-    # MixtapeSpider().getMixtape()
